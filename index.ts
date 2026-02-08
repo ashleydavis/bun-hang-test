@@ -38,7 +38,6 @@ ${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join
   .addHelpCommand(false);
 
 program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).addHelpText('after', getCommandExamplesHelp('add')).action(initContext(() => console.log('add')));
-program.command('bug').description('Bug report').option(...verboseOption).option(...yesOption).action(() => console.log('bug'));
 program.command('check').alias('chk').description('Check files').argument('<files...>').option(...dbOption).option(...verboseOption).action(initContext(() => console.log('check')));
 async function main() {
   try {

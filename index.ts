@@ -19,10 +19,6 @@ function getCommandExamplesHelp(commandName: string): string {
   return '\nExamples:\n' + examples.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join('\n');
 }
 
-function initContext<T extends (...args: any[]) => any>(fn: T): (...args: Parameters<T>) => Promise<ReturnType<T>> {
-  return async (...args: Parameters<T>) => fn(...args);
-}
-
 program
   .name('psi')
   .description('Minimal commander repro')
@@ -37,7 +33,7 @@ ${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join
   .exitOverride()
   .addHelpCommand(false);
 
-program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).addHelpText('after', getCommandExamplesHelp('add')).action(initContext(() => console.log('add')));
+program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).addHelpText('after', getCommandExamplesHelp('add')).action(() => console.log('add'));
 async function main() {
   try {
     await program.parseAsync(process.argv);

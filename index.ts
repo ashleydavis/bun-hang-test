@@ -2,7 +2,6 @@
 import { program } from 'commander';
 import pc from 'picocolors';
 
-const dbOption: [string, string] = ['--db <path>', 'Database directory'];
 const MAIN_EXAMPLES = [
   { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
 ];

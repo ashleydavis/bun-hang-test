@@ -3,7 +3,7 @@ import { program } from 'commander';
 import pc from 'picocolors';
 
 program
-  .addHelpText('after', `\n${pc.bold('x')}`);
+  .addHelpText('after', pc.bold('x'));
 
 program.parseAsync(process.argv).catch((err) => {
   console.error(err);

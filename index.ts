@@ -45,7 +45,6 @@ program.command('compare').alias('cmp').description('Compare databases').option(
 program.command('config').description('Config').option(...dbOption).action(() => console.log('config'));
 program.command('database-id').description('Database ID').option(...dbOption).action(() => console.log('database-id'));
 program.command('debug').description('Debug').option(...dbOption).action(() => console.log('debug'));
-program.command('examples').description('Examples').action(() => console.log('examples'));
 program.command('export').description('Export').option(...dbOption).action(() => console.log('export'));
 program.command('find-orphans').description('Find orphans').option(...dbOption).action(() => console.log('find-orphans'));
 program.command('hash').description('Hash').option(...dbOption).action(() => console.log('hash'));

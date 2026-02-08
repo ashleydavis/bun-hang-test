@@ -1,6 +1,13 @@
-# Bun 1.3.8 Startup Hang – Reproduction
+# Bun Startup Hang – Reproduction
 
-This repo helps reproduce a bug where **Bun 1.3.8 sometimes hangs on startup**.
+This repo helps reproduce a bug where **Bun sometimes hangs on startup** when running a script that uses commander + picocolors (see minimal repro in `index.ts`).
+
+## Bun versions that exhibit the hang
+
+| Bun version | Hang reproduced? | Notes |
+|-------------|------------------|--------|
+| 1.3.8       | Yes              | Run 2471 (commander 14.0.3) |
+| 1.3.7       | Yes              | Run 408  |
 
 ## Prerequisites
 

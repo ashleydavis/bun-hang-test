@@ -40,7 +40,6 @@ ${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join
 program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).addHelpText('after', getCommandExamplesHelp('add')).action(initContext(() => console.log('add')));
 program.command('bug').description('Bug report').option(...verboseOption).option(...yesOption).action(() => console.log('bug'));
 program.command('check').alias('chk').description('Check files').argument('<files...>').option(...dbOption).option(...verboseOption).action(initContext(() => console.log('check')));
-program.command('clear-cache').description('Clear hash cache').action(() => console.log('clear-cache'));
 program.command('compare').alias('cmp').description('Compare databases').option(...dbOption).option('--dest <path>', 'Dest').option(...verboseOption).action(() => console.log('compare'));
 program.command('config').description('Config').option(...dbOption).action(() => console.log('config'));
 program.command('database-id').description('Database ID').option(...dbOption).action(() => console.log('database-id'));

@@ -8,6 +8,19 @@ const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', fa
 
 const version = '0.0.8';
 
+const MAIN_EXAMPLES = [
+  { command: 'psi init --db ./photos', description: 'Creates a new database.' },
+  { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
+  { command: 'psi summary --db ./photos', description: 'Shows database summary.' },
+];
+
+function getCommandExamplesHelp(commandName: string): string {
+  const examples: { command: string; description: string }[] =
+    commandName === 'add' ? [{ command: 'psi add --db ./photos ~/Pictures', description: 'Adds files.' }] : [];
+  if (examples.length === 0) return '';
+  return '\nExamples:\n' + examples.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join('\n');
+}
+
 function initContext<T extends (...args: any[]) => any>(fn: T): (...args: Parameters<T>) => Promise<ReturnType<T>> {
   return async (...args: Parameters<T>) => fn(...args);
 }
@@ -24,11 +37,14 @@ program
 
 Getting help:
   ${pc.bold('psi <command> --help')}    Shows help for a particular command.
-  ${pc.bold('psi --help')}              Shows help for all commands.`)
+  ${pc.bold('psi --help')}              Shows help for all commands.
+
+Examples:
+${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join('\n')}`)
   .exitOverride()
   .addHelpCommand(false);
 
-program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).action(initContext(() => console.log('add')));
+program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).addHelpText('after', getCommandExamplesHelp('add')).action(initContext(() => console.log('add')));
 program.command('bug').description('Bug report').option(...verboseOption).option(...yesOption).action(() => console.log('bug'));
 program.command('check').alias('chk').description('Check files').argument('<files...>').option(...dbOption).option(...verboseOption).action(initContext(() => console.log('check')));
 program.command('clear-cache').description('Clear hash cache').action(() => console.log('clear-cache'));

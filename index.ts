@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 import { program } from 'commander';
+import pc from 'picocolors';
 
 const dbOption: [string, string] = ['--db <path>', 'Database directory'];
 const verboseOption: [string, string, boolean] = ['-v, --verbose', 'Verbose', false];
@@ -18,8 +19,8 @@ program
   .addHelpText('after', `
 
 Getting help:
-  psi <command> --help    Shows help for a particular command.
-  psi --help             Shows help for all commands.`)
+  ${pc.bold('psi <command> --help')}    Shows help for a particular command.
+  ${pc.bold('psi --help')}              Shows help for all commands.`)
   .exitOverride()
   .addHelpCommand(false);
 

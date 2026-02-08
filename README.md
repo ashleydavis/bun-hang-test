@@ -18,7 +18,7 @@ bun --version
 | File          | Description                                      |
 |---------------|--------------------------------------------------|
 | `index.ts`    | Minimal Bun “hello world” script                 |
-| `run-1000.sh` | Runs `index.ts` 1000 times with a 1-minute timeout per run |
+| `run-test.sh` | Runs `index.ts` 1000 times with a 1-minute timeout per run |
 | `README.md`   | This file                                        |
 
 ## How to Reproduce
@@ -39,13 +39,13 @@ If it hangs, you’ve hit the bug.
 1. Make the runner executable (if needed):
 
    ```bash
-   chmod +x run-1000.sh
+   chmod +x run-test.sh
    ```
 
 2. Run the script:
 
    ```bash
-   ./run-1000.sh
+   ./run-test.sh
    ```
 
 The script:
@@ -66,8 +66,8 @@ When reporting to the Bun team, you can include:
 
 - **Bun version**: `bun --version` (e.g. 1.3.8)
 - **OS**: e.g. Linux 6.14.0-37-generic
-- **Reproduction**: “Run `./run-1000.sh`; occasionally a run hangs and is killed after 60s (exit 124).”
+- **Reproduction**: “Run `./run-test.sh`; occasionally a run hangs and is killed after 60s (exit 124).”
 - **Single-run hang**: “Sometimes `bun run index.ts` hangs and never exits.”
-- **Script**: The `index.ts` and `run-1000.sh` from this repo (or a link to the repo).
+- **Script**: The `index.ts` and `run-test.sh` from this repo (or a link to the repo).
 
-You can also run a smaller batch to save time, e.g. change `RUNS=1000` to `RUNS=100` in `run-1000.sh`.
+You can also run a smaller batch to save time, e.g. change `RUNS=1000` to `RUNS=100` in `run-test.sh`.

@@ -7,7 +7,7 @@ const MAIN_EXAMPLES = [
 ];
 
 program
-  .name('psi')
+  .name('x')
   .description('')
   .addHelpText('after', `
 

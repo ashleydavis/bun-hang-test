@@ -24,7 +24,7 @@ ${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join
   .exitOverride()
   .addHelpCommand(false);
 
-program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).action(() => console.log('add'));
+program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).action(() => console.log('add'));
 async function main() {
   try {
     await program.parseAsync(process.argv);

@@ -11,11 +11,8 @@ program
   .description('')
   .addHelpText('after', `
 
-Getting help:
-  ${pc.bold('psi --help')}              Shows help for all commands.
-
 Examples:
-${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join('\n')}`)
+${MAIN_EXAMPLES.map((ex) => `  ${pc.bold(ex.command)} ${ex.description}`).join('\n')}`)
   .exitOverride()
   .addHelpCommand(false);
 

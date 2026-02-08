@@ -2,16 +2,9 @@
 import { program } from 'commander';
 import pc from 'picocolors';
 
-const MAIN_EXAMPLES = [
-  { command: 'a', description: 'b' },
-];
-
 program
   .name('x')
-  .addHelpText('after', `
-
-Examples:
-${MAIN_EXAMPLES.map((ex) => `  ${pc.bold(ex.command)} ${ex.description}`).join('\n')}`)
+  .addHelpText('after', `\n${pc.bold('x')}`)
   .exitOverride();
 
 program.command('add').description('').action(() => console.log('add'));

@@ -3,7 +3,6 @@ import { program } from 'commander';
 import pc from 'picocolors';
 
 program
-  .name('x')
   .addHelpText('after', `\n${pc.bold('x')}`)
   .exitOverride();
 

@@ -5,7 +5,4 @@ import pc from 'picocolors';
 program
   .addHelpText('after', pc.bold('x'));
 
-program.parseAsync(process.argv).catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+program.parseAsync(process.argv);

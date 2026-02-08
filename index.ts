@@ -8,6 +8,10 @@ const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', fa
 
 const version = '0.0.8';
 
+function initContext<T extends (...args: any[]) => any>(fn: T): (...args: Parameters<T>) => Promise<ReturnType<T>> {
+  return async (...args: Parameters<T>) => fn(...args);
+}
+
 program
   .name('psi')
   .description('Minimal commander repro')
@@ -24,9 +28,9 @@ Getting help:
   .exitOverride()
   .addHelpCommand(false);
 
-program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).action(() => console.log('add'));
+program.command('add').alias('a').description('Add files').argument('<files...>').option(...dbOption).option(...verboseOption).option(...yesOption).action(initContext(() => console.log('add')));
 program.command('bug').description('Bug report').option(...verboseOption).option(...yesOption).action(() => console.log('bug'));
-program.command('check').alias('chk').description('Check files').argument('<files...>').option(...dbOption).option(...verboseOption).action(() => console.log('check'));
+program.command('check').alias('chk').description('Check files').argument('<files...>').option(...dbOption).option(...verboseOption).action(initContext(() => console.log('check')));
 program.command('clear-cache').description('Clear hash cache').action(() => console.log('clear-cache'));
 program.command('compare').alias('cmp').description('Compare databases').option(...dbOption).option('--dest <path>', 'Dest').option(...verboseOption).action(() => console.log('compare'));
 program.command('config').description('Config').option(...dbOption).action(() => console.log('config'));

@@ -61,7 +61,6 @@ program.command('root-hash').description('Root hash').option(...dbOption).action
 program.command('set-origin').description('Set origin').option(...dbOption).action(() => console.log('set-origin'));
 program.command('summary').description('Summary').option(...dbOption).action(() => console.log('summary'));
 program.command('sync').description('Sync').option(...dbOption).action(() => console.log('sync'));
-program.command('tools').description('Tools').action(() => console.log('tools'));
 program.command('upgrade').description('Upgrade').option(...dbOption).action(() => console.log('upgrade'));
 program.command('verify').description('Verify').option(...dbOption).action(() => console.log('verify'));
 

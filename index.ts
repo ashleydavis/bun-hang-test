@@ -54,6 +54,12 @@ program.command('verify').description('Verify').option(...dbOption).action(() =>
 program.command('version').description('Version').action(() => console.log('version'));
 
 async function main() {
+  if (process.argv.includes('--debug')) {
+    try {
+      await Promise.resolve({ url: 'http://localhost:0' });
+    } catch (_) {}
+  }
+
   try {
     await program.parseAsync(process.argv);
   } catch (err: any) {

@@ -9,7 +9,6 @@ const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', fa
 const MAIN_EXAMPLES = [
   { command: 'psi init --db ./photos', description: 'Creates a new database.' },
   { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
-  { command: 'psi summary --db ./photos', description: 'Shows database summary.' },
 ];
 
 function getCommandExamplesHelp(commandName: string): string {

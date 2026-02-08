@@ -32,7 +32,6 @@ program
     console.log(version);
     process.exit(0);
   })
-  .option('--debug', 'Enable debug REST API server')
   .addHelpText('after', `
 
 Getting help:

@@ -4,7 +4,7 @@
 
 set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RUNS=1000
+RUNS=5000
 TIMEOUT_SEC=60
 
 for i in $(seq 1 "$RUNS"); do

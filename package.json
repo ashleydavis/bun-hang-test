@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "commander": "^13.1.0",
+    "commander": "^14.0.3",
     "picocolors": "^1.1.1"
   }
 }

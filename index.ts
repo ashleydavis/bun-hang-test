@@ -13,8 +13,7 @@ program
 
 Examples:
 ${MAIN_EXAMPLES.map((ex) => `  ${pc.bold(ex.command)} ${ex.description}`).join('\n')}`)
-  .exitOverride()
-  .addHelpCommand(false);
+  .exitOverride();
 
 program.command('add').description('').action(() => console.log('add'));
 async function main() {

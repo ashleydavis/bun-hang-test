@@ -10,13 +10,6 @@ const MAIN_EXAMPLES = [
   { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
 ];
 
-function getCommandExamplesHelp(commandName: string): string {
-  const examples: { command: string; description: string }[] =
-    commandName === 'add' ? [{ command: 'psi add --db ./photos ~/Pictures', description: 'Adds files.' }] : [];
-  if (examples.length === 0) return '';
-  return '\nExamples:\n' + examples.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join('\n');
-}
-
 program
   .name('psi')
   .description('Minimal commander repro')

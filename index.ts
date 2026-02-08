@@ -12,7 +12,6 @@ program
   .addHelpText('after', `
 
 Getting help:
-  ${pc.bold('psi <command> --help')}    Shows help for a particular command.
   ${pc.bold('psi --help')}              Shows help for all commands.
 
 Examples:

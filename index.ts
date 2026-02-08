@@ -8,7 +8,7 @@ const MAIN_EXAMPLES = [
 
 program
   .name('psi')
-  .description('Minimal commander repro')
+  .description('')
   .addHelpText('after', `
 
 Getting help:

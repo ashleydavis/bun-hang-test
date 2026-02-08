@@ -5,9 +5,21 @@ const dbOption: [string, string] = ['--db <path>', 'Database directory'];
 const verboseOption: [string, string, boolean] = ['-v, --verbose', 'Verbose', false];
 const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', false];
 
+const version = '0.0.8';
+
 program
   .name('psi')
   .description('Minimal commander repro')
+  .option('--version', 'output the version number', () => {
+    console.log(version);
+    process.exit(0);
+  })
+  .option('--debug', 'Enable debug REST API server')
+  .addHelpText('after', `
+
+Getting help:
+  psi <command> --help    Shows help for a particular command.
+  psi --help             Shows help for all commands.`)
   .exitOverride()
   .addHelpCommand(false);
 

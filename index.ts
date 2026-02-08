@@ -6,8 +6,6 @@ const dbOption: [string, string] = ['--db <path>', 'Database directory'];
 const verboseOption: [string, string, boolean] = ['-v, --verbose', 'Verbose', false];
 const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', false];
 
-const version = '0.0.8';
-
 const MAIN_EXAMPLES = [
   { command: 'psi init --db ./photos', description: 'Creates a new database.' },
   { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
@@ -28,10 +26,6 @@ function initContext<T extends (...args: any[]) => any>(fn: T): (...args: Parame
 program
   .name('psi')
   .description('Minimal commander repro')
-  .option('--version', 'output the version number', () => {
-    console.log(version);
-    process.exit(0);
-  })
   .addHelpText('after', `
 
 Getting help:

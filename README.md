@@ -10,6 +10,14 @@ This repo helps reproduce a bug where **Bun sometimes hangs on startup** when ru
 | 1.3.7       | Yes              | Run 408  |
 | 1.3.6       | No               | 11 full runs (5000× each) completed without hang |
 
+## Operating systems
+
+The hang has been reproduced on:
+
+- **Linux** (e.g. kernel 6.14.0-37-generic)
+
+Other operating systems (macOS, Windows) have not been tested in this repo. If you confirm the issue on another OS, please add it here.
+
 ## Prerequisites
 
 - **Bun 1.3.8** (or the version you want to test)

@@ -8,7 +8,6 @@ const MAIN_EXAMPLES = [
 
 program
   .name('x')
-  .description('')
   .addHelpText('after', `
 
 Examples:

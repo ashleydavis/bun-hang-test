@@ -7,7 +7,6 @@ const verboseOption: [string, string, boolean] = ['-v, --verbose', 'Verbose', fa
 const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', false];
 
 const MAIN_EXAMPLES = [
-  { command: 'psi init --db ./photos', description: 'Creates a new database.' },
   { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
 ];
 

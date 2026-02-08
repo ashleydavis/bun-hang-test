@@ -7,7 +7,6 @@ program
   .addHelpText('after', `\n${pc.bold('x')}`)
   .exitOverride();
 
-program.command('add').description('').action(() => console.log('add'));
 async function main() {
   try {
     await program.parseAsync(process.argv);

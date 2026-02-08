@@ -4,8 +4,6 @@ import pc from 'picocolors';
 
 const dbOption: [string, string] = ['--db <path>', 'Database directory'];
 const verboseOption: [string, string, boolean] = ['-v, --verbose', 'Verbose', false];
-const yesOption: [string, string, boolean] = ['-y, --yes', 'Non-interactive', false];
-
 const MAIN_EXAMPLES = [
   { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
 ];

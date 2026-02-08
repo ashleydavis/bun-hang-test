@@ -8,6 +8,7 @@ This repo helps reproduce a bug where **Bun sometimes hangs on startup** when ru
 |-------------|------------------|--------|
 | 1.3.8       | Yes              | Run 2471 (commander 14.0.3) |
 | 1.3.7       | Yes              | Run 408  |
+| 1.3.6       | No               | 11 full runs (5000× each) completed without hang |
 
 ## Prerequisites
 

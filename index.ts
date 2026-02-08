@@ -3,7 +3,7 @@ import { program } from 'commander';
 import pc from 'picocolors';
 
 const MAIN_EXAMPLES = [
-  { command: 'psi add --db ./photos ~/Pictures', description: 'Adds files from ~/Pictures.' },
+  { command: 'a', description: 'b' },
 ];
 
 program

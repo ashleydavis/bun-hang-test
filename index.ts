@@ -20,7 +20,7 @@ ${MAIN_EXAMPLES.map((ex) => `  ${ex.command.padEnd(46)} ${ex.description}`).join
   .exitOverride()
   .addHelpCommand(false);
 
-program.command('add').description('Add files').action(() => console.log('add'));
+program.command('add').description('').action(() => console.log('add'));
 async function main() {
   try {
     await program.parseAsync(process.argv);

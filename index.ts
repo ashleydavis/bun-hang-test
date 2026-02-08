@@ -65,7 +65,6 @@ program.command('sync').description('Sync').option(...dbOption).action(() => con
 program.command('tools').description('Tools').action(() => console.log('tools'));
 program.command('upgrade').description('Upgrade').option(...dbOption).action(() => console.log('upgrade'));
 program.command('verify').description('Verify').option(...dbOption).action(() => console.log('verify'));
-program.command('version').description('Version').action(() => console.log('version'));
 
 async function main() {
   try {

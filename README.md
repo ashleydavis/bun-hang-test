@@ -1,5 +1,7 @@
 # Bun Startup Hang – Reproduction
 
+FIX HAS BEEN CONFIRMED IN BUN 1.3.9
+
 This repo helps reproduce a bug where **Bun sometimes hangs on startup** when running a script that uses commander + picocolors (see minimal repro in `index.ts`).
 
 **Intermittency:** The hang is intermittent—a full 5000-run test may complete or may hit a hang (e.g. run 408, 2471, 3405). In the Photosphere project, the same class of hang shows up **more frequently** in smoke tests than in this minimal repro; this repo is tuned to reproduce it with a small script and many iterations.
